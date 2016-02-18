@@ -8,15 +8,17 @@ $ErrorActionPreference = 'Stop'; # stop on all errors
 $packageName= 'devaudit' # arbitrary name for the package, used in messages
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $url        = 'https://github.com/OSSIndex/DevAudit/releases/download/v1.0.1/DevAudit1.0.0.zip' # download url
+$checksum      = 'e7bd8e7dd43ae7c00dfd576359457d0f'
+$checksumType  = 'md5' #default is md5, can also be sha1
 #$url64      = '' # 64bit URL here or remove - if installer is both, use $url
 #$fileLocation = Join-Path $toolsDir 'NAME_OF_EMBEDDED_INSTALLER_FILE'
 #$fileLocation = Join-Path $toolsDir 'SHARE_LOCATION_OF_INSTALLER_FILE'
 
-$packageArgs = @{
-  packageName   = $packageName
-  unzipLocation = $toolsDir
-  fileType      = 'EXE' #only one of these: exe, msi, msu
-  url           = $url
+#$packageArgs = @{
+  #packageName   = $packageName
+  #unzipLocation = $toolsDir
+  #fileType      = 'EXE' #only one of these: exe, msi, msu
+  #url           = $url
   #url64bit      = $url64
   #file         = $fileLocation
 
@@ -39,14 +41,14 @@ $packageArgs = @{
   #validExitCodes= @(0) #please insert other valid exit codes here
 
   # optional, highly recommended
-  softwareName  = 'devaudit*' #part or all of the Display Name as you see it in Programs and Features. It should be enough to be unique
-  checksum      = 'e7bd8e7dd43ae7c00dfd576359457d0f'
-  checksumType  = 'md5' #default is md5, can also be sha1
+  #softwareName  = 'devaudit*' #part or all of the Display Name as you see it in Programs and Features. It should be enough to be unique
+  #checksum      = 'e7bd8e7dd43ae7c00dfd576359457d0f'
+  #checksumType  = 'md5' #default is md5, can also be sha1
   #checksum64    = ''
   #checksumType64= 'md5' #default is checksumType
-}
+#}
 
-Install-ChocolateyPackage @packageArgs
+#Install-ChocolateyPackage @packageArgs
 #Install-ChocolateyZipPackage @packageArgs
 # if you are making your own internal packages (organizations), you can embed the installer or 
 # put on internal file share and use the following instead (you'll need to add $file to the above)
@@ -61,7 +63,7 @@ Install-ChocolateyPackage @packageArgs
 
 ## Download and unpack a zip file
 ##Install-ChocolateyZipPackage $packageName $url $toolsDir [$url64 -checksum $checksum -checksumType $checksumType -checksum64 $checksum64 -checksumType64 $checksumType64]
-Install-ChocolateyZipPackage $packageName $url $toolsDir [-checksum $checksum -checksumType $checksumType]
+Install-ChocolateyZipPackage $packageName $url $toolsDir -checksum $checksum -checksumType $checksumType
 
 ## Install Visual Studio Package
 #Install-ChocolateyVsixPackage $packageName $url [$vsVersion] [-checksum $checksum -checksumType $checksumType]
