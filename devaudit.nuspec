@@ -34,20 +34,20 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
 
     <!-- == SOFTWARE SPECIFIC SECTION == -->
     <!-- This section is about the software itself -->
-    <title>DevAudit (Install)</title>
+    <title>DevAudit</title>
     <authors>Allister Beharry</authors>
     <!-- projectUrl is required for the community feed -->
     <projectUrl>https://github.com/OSSIndex/DevAudit</projectUrl>
     <!--<iconUrl>http://cdn.rawgit.com/__REPLACE_YOUR_REPO__/master/icons/devaudit.png</iconUrl>-->
     <copyright>Copyright (c) 2016, Vör Security, Ltd.</copyright>
     <!-- If there is a license Url available, it is is required for the community feed -->
-    <licenseUrl>https://opensource.org/licenses/BSD-3-Clause</licenseUrl>
+    <licenseUrl>https://github.com/OSSIndex/DevAudit/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/OSSIndex/DevAudit</projectSourceUrl>
     <!--<docsUrl>At what url are the software docs located?</docsUrl>-->
     <!--<mailingListUrl></mailingListUrl>-->
     <!--<bugTrackerUrl></bugTrackerUrl>-->
-    <tags>devaudit admin Vulnerability Vulnerabilities CVE Audit</tags>
+    <tags>DevAudit Vulnerability Vulnerabilities CVE Audit</tags>
     <summary>Identify known vulnerabilities in development packages and applications (NuGet, MSI, Chocolatey, OneGet, Bower)</summary>
     <description>Identify known vulnerabilities in development packages and applications (NuGet, MSI, Chocolatey, OneGet, Bower)</description>
     <!-- <releaseNotes>__REPLACE_OR_REMOVE__MarkDown_Okay</releaseNotes> -->
