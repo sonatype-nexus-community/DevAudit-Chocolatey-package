@@ -7,8 +7,8 @@ $ErrorActionPreference = 'Stop'; # stop on all errors
 
 $packageName= 'devaudit' # arbitrary name for the package, used in messages
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url        = 'https://github.com/OSSIndex/DevAudit/releases/download/v1.0.1/DevAudit1.0.0.zip' # download url
-$checksum      = 'e7bd8e7dd43ae7c00dfd576359457d0f'
+$url        = 'https://github.com/OSSIndex/DevAudit/releases/download/v{{VERSION}}/DevAudit{{VERSION}}.zip' # download url
+$checksum      = '{{MD5}}'
 $checksumType  = 'md5' #default is md5, can also be sha1
 #$url64      = '' # 64bit URL here or remove - if installer is both, use $url
 #$fileLocation = Join-Path $toolsDir 'NAME_OF_EMBEDDED_INSTALLER_FILE'
