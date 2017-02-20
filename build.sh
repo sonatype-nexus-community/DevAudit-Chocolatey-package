@@ -20,8 +20,8 @@ do
 	VERSION=(${TOKEN//./ })
 	MAJOR=${VERSION[0]}
 	MINOR=${VERSION[1]}
-	PATCH=${VERSION[1]}
-	BUILD=${VERSION[2]}
+	PATCH=${VERSION[2]}
+	BUILD=${VERSION[3]}
 	
 	if [ $BUILD -gt $MAXBUILD ]
 	then
