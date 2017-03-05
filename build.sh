@@ -11,7 +11,7 @@ mkdir work/tools
 
 MAXBUILD=0
 
-for FILE in `find ../DevAudit.Windows-2.0.x/DevAudit-2.0.0.*.zip -type f`
+for FILE in `find ../DevAudit.Windows-2.0.x/DevAudit-2.0.1.*.zip -type f`
 do
 	PATH=(${FILE//\// })
 	FNAME=${PATH[2]}
