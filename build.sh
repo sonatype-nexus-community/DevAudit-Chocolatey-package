@@ -12,7 +12,14 @@ mkdir work/tools
 MAXBUILD=0
 MAXPATCH=0
 
-for FILE in `find ../DevAudit.Windows-2.0.x/DevAudit-2.0.*.*.zip -type f`
+DEVAUDIT_DIR=DevAudit.Windows-2.0.x
+
+if [ ! -d ../$DEVAUDIT_DIR ]
+then
+	DEVAUDIT_DIR=DevAudit
+fi
+
+for FILE in `find ../$DEVAUDIT_DIR/DevAudit-2.*.*.*.zip -type f`
 do
 	PATH=(${FILE//\// })
 	FNAME=${PATH[2]}
@@ -34,7 +41,7 @@ do
 done
 
 echo "VERSION: $MAJOR.$MINOR.$MAXPATCH.$MAXBUILD"
-MD5=`/usr/bin/md5sum ../DevAudit.Windows-2.0.x/DevAudit-$MAJOR.$MINOR.$MAXPATCH.$MAXBUILD.zip | /usr/bin/gawk '{print $1}'`
+MD5=`/usr/bin/md5sum ../$DEVAUDIT_DIR/DevAudit-$MAJOR.$MINOR.$MAXPATCH.$MAXBUILD.zip | /usr/bin/gawk '{print $1}'`
  
 /usr/bin/sed -e "s/{{VERSION}}/$MAJOR.$MINOR.$PATCH.$MAXBUILD/" devaudit.nuspec > work/devaudit.nuspec
 /usr/bin/sed -e "s/{{VERSION}}/$MAJOR.$MINOR.$PATCH.$MAXBUILD/g" -e "s/{{MD5}}/$MD5/g" -e 's/#.*$//' -e '/^[[:space:]]*$/d' tools/chocolateyinstall.ps1 > work/tools/chocolateyinstall.ps1
