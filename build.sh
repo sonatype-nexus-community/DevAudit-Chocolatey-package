@@ -19,7 +19,7 @@ then
 	DEVAUDIT_DIR=DevAudit
 fi
 
-for FILE in `find ../$DEVAUDIT_DIR/DevAudit-2.*.*.*.zip -type f`
+for FILE in `find ../$DEVAUDIT_DIR/DevAudit-3.*.*.*.zip -type f`
 do
 	PATH=(${FILE//\// })
 	FNAME=${PATH[2]}
