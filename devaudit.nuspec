@@ -29,13 +29,13 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <version>{{VERSION}}</version>
     <packageSourceUrl>https://github.com/OSSIndex/DevAudit-Chocolatey-package</packageSourceUrl>
     <!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
-    <owners>Vör Security Ltd.</owners>
+    <owners>Ken Duck, Allister Beharry</owners>
     <!-- ============================== -->
 
     <!-- == SOFTWARE SPECIFIC SECTION == -->
     <!-- This section is about the software itself -->
     <title>DevAudit</title>
-    <authors>Allister Beharry</authors>
+    <authors>OSS Index</authors>
     <!-- projectUrl is required for the community feed -->
     <projectUrl>https://github.com/OSSIndex/DevAudit</projectUrl>
     <!--<iconUrl>http://cdn.rawgit.com/__REPLACE_YOUR_REPO__/master/icons/devaudit.png</iconUrl>-->

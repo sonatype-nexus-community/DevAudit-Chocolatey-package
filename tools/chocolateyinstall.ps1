@@ -14,11 +14,11 @@ $checksumType  = 'md5' #default is md5, can also be sha1
 #$fileLocation = Join-Path $toolsDir 'NAME_OF_EMBEDDED_INSTALLER_FILE'
 #$fileLocation = Join-Path $toolsDir 'SHARE_LOCATION_OF_INSTALLER_FILE'
 
-#$packageArgs = @{
-  #packageName   = $packageName
-  #unzipLocation = $toolsDir
+$packageArgs = @{
+  packageName   = $packageName
+  unzipLocation = $toolsDir
   #fileType      = 'EXE' #only one of these: exe, msi, msu
-  #url           = $url
+  url           = $url
   #url64bit      = $url64
   #file         = $fileLocation
 
@@ -42,8 +42,8 @@ $checksumType  = 'md5' #default is md5, can also be sha1
 
   # optional, highly recommended
   #softwareName  = 'devaudit*' #part or all of the Display Name as you see it in Programs and Features. It should be enough to be unique
-  #checksum      = 'e7bd8e7dd43ae7c00dfd576359457d0f'
-  #checksumType  = 'md5' #default is md5, can also be sha1
+  checksum      = $checksum
+  checksumType  = $checksumType
   #checksum64    = ''
   #checksumType64= 'md5' #default is checksumType
 #}
@@ -63,7 +63,7 @@ $checksumType  = 'md5' #default is md5, can also be sha1
 
 ## Download and unpack a zip file
 ##Install-ChocolateyZipPackage $packageName $url $toolsDir [$url64 -checksum $checksum -checksumType $checksumType -checksum64 $checksum64 -checksumType64 $checksumType64]
-Install-ChocolateyZipPackage $packageName $url $toolsDir -checksum $checksum -checksumType $checksumType
+Install-ChocolateyZipPackage @packageArgs
 
 ## Install Visual Studio Package
 #Install-ChocolateyVsixPackage $packageName $url [$vsVersion] [-checksum $checksum -checksumType $checksumType]
